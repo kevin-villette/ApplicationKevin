@@ -3,4 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="screenBackground">#166FB4</color>
+    <color name="buttonBackgroundVert">#037C07</color>
+    <color name="buttonBackgroundJaune">#FFE401</color>
+    <color name="buttonBackgroundBleu">#0526E4</color>
+    <color name="texteButton">#940AAA</color>
 </resources>

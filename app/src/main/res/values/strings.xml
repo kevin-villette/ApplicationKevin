@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Application Kevin</string>
+    <string name="les_bi_res_c_est_la_vie_surtout_la_chouffe">Les bières c\'est la vie surtout la chouffe</string>
+    <string name="les_bi_res_c_est_la_vie">bières la vie</string>
 </resources>
