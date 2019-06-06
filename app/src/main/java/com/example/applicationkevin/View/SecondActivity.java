@@ -1,7 +1,9 @@
-package com.example.applicationkevin;
+package com.example.applicationkevin.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.applicationkevin.R;
 
 public class SecondActivity extends AppCompatActivity {
 
