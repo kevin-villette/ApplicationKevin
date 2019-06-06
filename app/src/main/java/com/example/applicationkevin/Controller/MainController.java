@@ -22,17 +22,17 @@ public class MainController {
     }
 
     public void onCreate() {
-        Call<RestBeerResponse> call = restApiBeer.getBeerData();
-        call.enqueue(new Callback<RestBeerResponse>() {
+        Call<List<Beer>> call = restApiBeer.getBeerData();
+        call.enqueue(new Callback<List<Beer>>() {
             @Override
-            public void onResponse(Call<RestBeerResponse> call, Response<RestBeerResponse> response) {
-                RestBeerResponse RestBeerResponse = response.body();
-                List<Beer> beerList = RestBeerResponse.getResults();
+            public void onResponse(Call<List<Beer>> call, Response<List<Beer>> response) {
+                List<Beer> restBeerResponse = response.body();
+                List<Beer> beerList = restBeerResponse;
                 view.showList(beerList);
             }
 
             @Override
-            public void onFailure(Call<RestBeerResponse> call, Throwable t) {
+            public void onFailure(Call<List<Beer>> call, Throwable t) {
 
             }
         });

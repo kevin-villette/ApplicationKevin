@@ -2,13 +2,18 @@ package com.example.applicationkevin.Model;
 
 public class Beer {
     private String name;
-    private String url;
+    private String description;
+    private Integer id;
 
     public String getName() {
         return name;
     }
 
-    public String getUrl() {
-        return url;
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

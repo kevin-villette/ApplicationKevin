@@ -59,6 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         return vh;
     }
 
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
@@ -66,14 +67,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         final Beer selectedBeer = values.get(position);
         holder.txtHeader.setText(selectedBeer.getName());
-        holder.txtHeader.setOnClickListener(new OnClickListener() {
+        holder.layout.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 remove(position);
             }
         });
 
-        holder.txtFooter.setText("URL : " + selectedBeer.getUrl());
+        holder.txtFooter.setText("URL : " + selectedBeer.getId());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
@@ -81,5 +82,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public int getItemCount() {
         return values.size();
     }
-
 }
