@@ -1,7 +1,6 @@
 package com.example.applicationkevin.Controller;
 
 import com.example.applicationkevin.Model.Beer;
-import com.example.applicationkevin.Model.RestBeerResponse;
 import com.example.applicationkevin.RestApiBeer;
 import com.example.applicationkevin.View.MainActivity;
 

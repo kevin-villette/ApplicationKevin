@@ -1,7 +1,6 @@
 package com.example.applicationkevin;
 
 import com.example.applicationkevin.Model.Beer;
-import com.example.applicationkevin.Model.RestBeerResponse;
 
 import java.util.List;
 

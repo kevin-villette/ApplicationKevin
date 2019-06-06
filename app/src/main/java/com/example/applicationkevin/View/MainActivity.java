@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         // define an adapter
         //Instanciation de mAdapter
-        mAdapter = new MyAdapter(beerList);
+        mAdapter = new MyAdapter(beerList, this);
         recyclerView.setAdapter(mAdapter);
     }
 

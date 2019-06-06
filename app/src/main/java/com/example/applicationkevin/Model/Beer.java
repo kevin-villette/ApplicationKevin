@@ -4,6 +4,7 @@ public class Beer {
     private String name;
     private String description;
     private Integer id;
+    private String tagline;
 
     public String getName() {
         return name;
@@ -16,4 +17,6 @@ public class Beer {
     public Integer getId() {
         return id;
     }
+
+    public String getTagline() {return tagline;}
 }

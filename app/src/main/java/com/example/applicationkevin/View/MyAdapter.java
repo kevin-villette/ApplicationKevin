@@ -1,19 +1,23 @@
 package com.example.applicationkevin.View;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import com.example.applicationkevin.View.MainActivity;
 import com.example.applicationkevin.R;
 import com.example.applicationkevin.Model.Beer;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Beer> values;
+    private MainActivity mainActivity;
+
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -38,14 +42,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         notifyItemInserted(position);
     }
 
+    private static final String SelectedBeer = "selected_Beer";
     public void remove(int position) {
-        values.remove(position);
-        notifyItemRemoved(position);
+
+        Intent infoIntent = new Intent(mainActivity, SecondActivity.class);
+        final Beer selectedBeer = values.get(position);
+
+        ArrayList<String> beer = new ArrayList<>();
+
+        beer.add(selectedBeer.getName());
+        beer.add(selectedBeer.getDescription());
+        beer.add(selectedBeer.getTagline());
+
+
+        infoIntent.putStringArrayListExtra(SelectedBeer,beer);
+
+        mainActivity.startActivity(infoIntent);
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Beer> values) {
+    public MyAdapter(List<Beer> values, MainActivity mainActivity) {
         this.values = values;
+        this.mainActivity = mainActivity;
     }
 
     // Create new views (invoked by the layout manager)
@@ -67,14 +85,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         final Beer selectedBeer = values.get(position);
         holder.txtHeader.setText(selectedBeer.getName());
-        holder.layout.setOnClickListener(new OnClickListener() {
+        holder.layout.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 remove(position);
             }
         });
 
-        holder.txtFooter.setText("URL : " + selectedBeer.getId());
     }
 
     // Return the size of your dataset (invoked by the layout manager)
