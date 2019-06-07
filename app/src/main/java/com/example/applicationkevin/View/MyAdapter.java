@@ -51,8 +51,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         ArrayList<String> beer = new ArrayList<>();
 
         beer.add(selectedBeer.getName());
-        beer.add(selectedBeer.getDescription());
-        beer.add(selectedBeer.getTagline());
+        beer.add(selectedBeer.getSize());
+        beer.add(selectedBeer.getPrice());
 
 
         infoIntent.putStringArrayListExtra(SelectedBeer,beer);

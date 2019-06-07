@@ -5,18 +5,18 @@ public class Beer {
     private String description;
     private Integer id;
     private String tagline;
+    private String size;
+    private String price;
 
     public String getName() {
         return name;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public String getTagline() {return tagline;}
+    public String getSize() {return size;}
+
+    public String getPrice() {return price;}
 }
